@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-fish-deployment
+spec:
+  replicas: 1
+  selector:
+    matchlabels:
+      component: go-fish-api
+  template:
+    metadata:
+      labels:
+        component: go-fish-api
+    spec:
+      containers:
+        - name: gofish
+          image: darkxlayers/go-fish
+          ports:
+            - containerPort: 8090

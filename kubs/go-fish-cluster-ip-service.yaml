@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-fish-cluster-ip
+spec:
+  type: ClusterIp
+  selector:
+    component: go-fish-api
+  ports:
+    - port: 8090
+      targetPort: 8090
