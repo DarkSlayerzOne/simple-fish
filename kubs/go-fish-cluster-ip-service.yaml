@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: go-fish-cluster-ip
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: fish
   ports:

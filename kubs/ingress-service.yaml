@@ -1,4 +1,4 @@
-apiVersion: extension/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-service
@@ -10,6 +10,9 @@ spec:
     - http:
         paths:
           - path: /sea-store
+            pathType: Prefix
             backend:
-              serviceName: go-fish-cluster-ip
-              servicePort: 8090
+              service: 
+                name: go-fish-cluster-ip
+                port:
+                  number: 8090
