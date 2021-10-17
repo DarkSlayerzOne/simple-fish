@@ -5,15 +5,16 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchlabels:
-      component: go-fish-api
+    matchLabels:
+      app: fish
   template:
     metadata:
       labels:
-        component: go-fish-api
+        app: fish
     spec:
       containers:
         - name: gofish
           image: darkxlayers/go-fish
+          imagePullPolicy: Always
           ports:
             - containerPort: 8090

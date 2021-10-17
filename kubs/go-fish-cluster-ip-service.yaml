@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIp
   selector:
-    component: go-fish-api
+    app: fish
   ports:
     - port: 8090
       targetPort: 8090
